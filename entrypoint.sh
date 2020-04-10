@@ -21,13 +21,13 @@ git clone $REPOSITORY_PATH
 echo "⭐️ Clean old files by running $GITHUB_PAGES_CLEANUP_SCRIPT"
 cd ./$GITHUB_PAGES_REPO_NAME
 eval "$GITHUB_PAGES_CLEANUP_SCRIPT"
+cd -
 
 echo "⭐️ Copy build from $PROJECT_BUILD_FOLDER"
-cd ../$PROJECT_BUILD_FOLDER
-cp -R * ../$GITHUB_PAGES_REPO_NAME
+cp -R $PROJECT_BUILD_FOLDER $GITHUB_PAGES_REPO_NAME
 
 echo "⭐️ Commit changes with message: $COMMIT_MESSAGE"
-cd ../$GITHUB_PAGES_REPO_NAME
+cd ./$GITHUB_PAGES_REPO_NAME
 git add .
 git commit -m "Release: $COMMIT_MESSAGE"
 
