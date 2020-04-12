@@ -34,7 +34,7 @@ jobs:
         npm install
         npm run build
     - name: Release Github Pages
-      uses: igolopolosov/github-action-release-github-pages@master
+      uses: StacyYang/github-action-release-github-pages@master
       env:
         GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
         GITHUB_PAGES_REPO_AUTHOR: igolopolosov
